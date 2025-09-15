@@ -6,67 +6,39 @@ const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
-function htmlTask() {
-    return src('./src/pages/**/*.html')
-        .pipe(dest('./dist'));
-}
+const htmlTask = () => 
+    src('./src/pages/**/*.html')
+        .pipe(dest('./dist/pages'));
 
-function scssTask() {
-    return src('./src/scss/**/*.scss')
+const scssTask = () => 
+    src('./src/scss/**/*.scss')
         .pipe(sass())
         .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('./dist/css'))
-        // .pipe(browserSync.stream()); 
-}
+        .pipe(dest('./dist/css'));
 
-function jsTask() {
-    return src('./src/js/**/*.js')
+const jsTask = () => 
+    src('./src/js/**/*.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./dist/js'));
-}
 
-function imgTask() {
-    return src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
+const imgTask = () => 
+    src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
         .pipe(imagemin())
         .pipe(dest('./dist/img'));
-}
 
-function serve() {
+const serve = () => {
     browserSync.init({
         server: {
             baseDir: "./dist"
         }
     });
 
-   // watch('./src/**/*.html').on('change', series(htmlTask, browserSync.reload));
-   // watch('./src/**/*.js').on('change', series(jsTask, browserSync.reload));
-   // watch('./src/**/*.scss', scssTask);
-   // watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}').on('change', series(imgTask, browserSync.reload));
-
-
-   watch('./src/pages/**/*.html').on('change', series(htmlTask, function(done) {
-        browserSync.reload();
-        done();
-    }));
-
-    // watch('./src/scss/**/*.scss', scssTask);
-    
-    watch('./src/scss/**/*.scss').on('change', series(scssTask, function(done) {
-        browserSync.reload();
-        done();
-    }));
-
-    watch('./src/js/**/*.js').on('change', series(jsTask, function(done) {
-        browserSync.reload();
-        done();
-    }));
-
-    watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}').on('change', series(imgTask, function(done) {
-        browserSync.reload();
-        done();
-    }));
+    watch('./src/pages/**/*.html', series(htmlTask, done => { browserSync.reload(); done(); }));
+    watch('./src/scss/**/*.scss', series(scssTask, done => { browserSync.reload(); done(); }));
+    watch('./src/js/**/*.js', series(jsTask, done => { browserSync.reload(); done(); }));
+    watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}', series(imgTask, done => { browserSync.reload(); done(); }));
 }
 
 exports.htmlTask = htmlTask;
