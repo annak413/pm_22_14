@@ -17,7 +17,7 @@ function scssTask() {
         .pipe(cssnano())
         .pipe(rename({ suffix: '.min' }))
         .pipe(dest('./dist/css'))
-        .pipe(browserSync.stream()); 
+        // .pipe(browserSync.stream()); 
 }
 
 function jsTask() {
@@ -51,7 +51,12 @@ function serve() {
         done();
     }));
 
-    watch('./src/scss/**/*.scss', scssTask);
+    // watch('./src/scss/**/*.scss', scssTask);
+    
+    watch('./src/scss/**/*.scss').on('change', series(scssTask, function(done) {
+        browserSync.reload();
+        done();
+    }));
 
     watch('./src/js/**/*.js').on('change', series(jsTask, function(done) {
         browserSync.reload();
