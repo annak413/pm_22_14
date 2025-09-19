@@ -8,6 +8,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Resume</title>
   </head>
   <body>
@@ -17,40 +23,44 @@
           <div class="ava_res"></div>
         </div>
         <div class="contact">
-          <h2 class="contact_title">Contact</h2>
-          <div class="contact_block">
-            <div class="logo_cont">
-              <img class="contact_logo" src="../img/logo_phone.svg" alt="" />
+          <h2 class="left_part__title">Contact</h2>
+          <hr />
+          <div class="contact_wrapp">
+            <div class="contact_block">
+              <div class="logo_cont">
+                <img class="contact_logo" src="../img/logo_phone.svg" alt="" />
+              </div>
+              <div class="personal_cont">
+                <span class="soc_cont">Phone:</span> <br />
+                <span class="contact_span">00 1234 567 889</span>
+              </div>
             </div>
-            <div class="personal_cont">
-              Phone: <br />
-              00 1234 567 889
+            <div class="contact_block">
+              <div class="logo_cont">
+                <img class="contact_logo" src="../img/logo_mail.svg" alt="" />
+              </div>
+              <div class="personal_cont">
+                <span class="soc_cont">Mail:</span><br />
+                <span class="contact_span">Lnderson@gmail.com</span>
+              </div>
             </div>
-          </div>
-          <div class="contact_block">
-            <div class="logo_cont">
-              <img class="contact_logo" src="../img/logo_mail.svg" alt="" />
-            </div>
-            <div class="personal_cont">
-              Mail: <br />
-              Lnderson@gmail.com
-            </div>
-          </div>
-          <div class="contact_block">
-            <div class="logo_cont">
-              <img class="contact_logo" src="../img/logo_web.svg" alt="" />
-            </div>
-            <div class="personal_cont">
-              Web: <br />
-              www.Lnderson.com
+            <div class="contact_block">
+              <div class="logo_cont">
+                <img class="contact_logo" src="../img/logo_web.svg" alt="" />
+              </div>
+              <div class="personal_cont">
+                <span class="soc_cont">Web:</span><br />
+                <span class="contact_span">www.Lnderson.com</span>
+              </div>
             </div>
           </div>
         </div>
         <div class="skills">
-          <h2 class="skills_title">Skills</h2>
+          <h2 class="left_part__title">Skills</h2>
+          <hr />
           <div class="block_skills">
             <div class="skill_title">// Professional</div>
-            <div class="skills_subtitles">
+            <div class="skills_subtitles skills_subtitles__first">
               <div class="subtitle__item">Creativity</div>
               <div class="subtitle__item">Teamwork</div>
               <div class="subtitle__item">Communucation</div>
@@ -69,7 +79,8 @@
           </div>
         </div>
         <div class="social">
-          <h2 class="skills_title">Social</h2>
+          <h2 class="left_part__title">Social</h2>
+          <hr />
           <div class="block_socials">
             <div class="block_social">
               <div class="name_social">Facebook</div>
@@ -100,7 +111,7 @@
       </div>
       <div class="right_part">
         <div class="name_bar">
-          <h1 class="res_name">Laura Anderson</h1>
+          <h1 class="res_name">Laura <b>Anderson</b></h1>
           <p class="position">Web Design & Developer</p>
         </div>
         <div class="greeting_part">
@@ -115,7 +126,8 @@
           </p>
         </div>
         <div class="experiance_part">
-          <h2 class="experiance_title">Experience</h2>
+          <h2 class="right_part__title">Experience</h2>
+          <hr class="hr_left__part" />
           <div class="timeline_cont">
             <div class="timeline_block">
               <div class="job_block">
@@ -171,7 +183,7 @@
           </div>
         </div>
         <div class="education_part">
-          <h2 class="education_title">EDUCATION</h2>
+          <h2 class="right_part__title">EDUCATION</h2>
           <div class="timeline_cont">
             <div class="timeline_block">
               <div class="degree_block">
@@ -210,12 +222,12 @@
           </div>
         </div>
         <div class="references_part">
-          <h2 class="references_title">REFERENCES</h2>
+          <h2 class="right_part__title">REFERENCES</h2>
           <div class="timeline_cont">
             <div class="timeline_block">
               <div class="name_ref">
                 <div class="name_person">ADAM smith</div>
-                <div class="position">Web Designer</div>
+                <div class="posit">Web Designer</div>
               </div>
               <div class="block_ref">
                 <div class="name_block__ref">Soft Creative Jone</div>
@@ -230,7 +242,7 @@
             <div class="timeline_block">
               <div class="name_ref">
                 <div class="name_person">JENSON SMITH</div>
-                <div class="position">Web developer</div>
+                <div class="posit">Web developer</div>
               </div>
               <div class="block_ref">
                 <div class="name_block__ref">Dev Tech LTD</div>
