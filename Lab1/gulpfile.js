@@ -8,7 +8,7 @@ const browserSync = require('browser-sync').create();
 
 const htmlTask = () => 
     src('./src/pages/**/*.html')
-        .pipe(dest('./dist/pages'));
+        .pipe(dest('./dist'));
 
 const scssTask = () => 
     src('./src/scss/**/*.scss')

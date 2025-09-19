@@ -1,8 +1,55 @@
-body {
-   background-color: blueviolet;
-   color: #000;
+@import 'reset.scss';
+
+.container {
+   display: flex;
+   flex-direction: row;
+   max-width: 1024px;
+   margin: 0 auto;
 }
 
-p {
-   color: cadetblue;
+.left_part {
+   background-color: #273347;
+   color: #fefefe;
 }
+
+.img_ava {
+   margin: 0 auto;
+}
+
+.ava_res {
+   width: 100px;
+   height: 100px;
+   margin: 0 auto;
+   background-color: white;
+   border-radius: 50%; 
+}
+
+.contact_title {
+   font-size: 63px;
+   text-transform: uppercase;
+   color: #fefefe;
+   font-weight: 700;
+   font-family: "Open Sans";
+}
+
+.personal_cont {
+   font-size: 35px;
+   color: #fefefe;
+   font-weight: 700;
+   font-family: "Lato";
+}
+
+.contact_block {
+   display: flex;
+   // justify-content: space-between;
+   gap: 62px;
+}
+
+.logo_cont {
+   width: 81px;
+}
+
+// .contact_logo {
+//    width: 81px;
+//    height: 81px;
+// }
