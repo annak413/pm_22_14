@@ -13,6 +13,7 @@
    color: #fefefe;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
    gap: 174px;
 }
 
@@ -21,8 +22,8 @@
 }
 
 .ava_res {
-   width: 400px;
-   height: 400px;
+   width: 500px;
+   height: 500px;
    margin: 0 auto;
    background-color: white;
    border-radius: 50%; 
@@ -50,6 +51,7 @@ hr {
    display: flex;
    flex-direction: column;
    gap: 70px;
+   width: 700px;
 }
 
 .contact_block {
@@ -122,6 +124,9 @@ hr {
 
 //RIGHT PART-----------------------------------------------------------------------------------
 .right_part {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    padding: 227px 100px 173px 102px;
    color: #403f40;
 }
@@ -262,4 +267,79 @@ hr {
 //EDUCATION---------------------------------------------------------------------------------------------
 .education_part {
    margin-top: 131px;
+}
+
+.degree_date {
+   width: 350px;
+}
+
+.degree_name {
+   font-size: 35px;
+   line-height: 50px;
+   text-transform: uppercase;
+   color: #424242;
+   font-weight: 600;
+}
+
+.degree_date {
+   font-size: 35px;
+   line-height: 58px;
+   color: #939598;
+   font-weight: 700;
+}
+
+.unic_name {
+   font-size: 42px;
+   line-height: 58px;
+   color: #424242;
+   font-weight: 700;
+   font-family: "Lato";
+}
+
+.unik_desc {
+   font-size: 33px;
+   color: #939598;
+}
+
+//REFEREBCES-------------------------------------------------------------------------------------
+.references_part {
+   margin-top: 131px;
+}
+
+.name_person {
+   font-size: 35px;
+   line-height: 50px;
+   text-transform: uppercase;
+   color: #424242;
+   font-weight: 600;
+   width: 252px;
+}
+
+.posit {
+   font-size: 35px;
+   line-height: 58px;
+   color: #808284;
+   font-weight: 700;
+   font-family: "Lato";
+}
+
+.name_block__ref {
+   font-size: 42px;
+   line-height: 58px;
+   color: #424242;
+   font-weight: 700;
+   font-family: "Lato";
+}
+
+.block_desc__ref {
+   font-size: 35px;
+   color: #6c6e70;
+   font-family: "Lato";
+}
+
+.block_contact__ref {
+   font-size: 35px;
+   color: #403f40;
+   font-family: "Lato";
+   font-weight: 400;
 }
