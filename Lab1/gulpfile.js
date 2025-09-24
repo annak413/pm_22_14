@@ -5,10 +5,22 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
+const { src, dest } = require('gulp');
+const fileInclude = require('gulp-file-include');
+
+
+// const htmlTask = () => 
+//     src('./src/pages/**/*.html')
+//         .pipe(dest('./dist'));
 
 const htmlTask = () => 
-    src('./src/pages/**/*.html')
+    src('./src/pages/*.html')  
+        .pipe(fileInclude({
+            prefix: '@@',      
+            basepath: '@file'  
+        }))
         .pipe(dest('./dist'));
+
 
 const scssTask = () => 
     src('./src/scss/**/*.scss')
