@@ -355,3 +355,87 @@
   opacity: 1;
   border-top: 3px solid #fff;
 }
+
+.title h1 {
+   letter-spacing: 8px;
+   color: #403f40;
+}
+
+.title p {
+   letter-spacing: 1px;
+   color: #808284;
+}
+
+.greating h3 {
+   color: #403f40;
+   letter-spacing: 1px;
+}
+
+.greating p {
+   color: #a6a9ab;
+}
+
+.expirience h2 {
+   color: #403f40;
+}
+
+.right_part hr {
+  opacity: 1;
+  border-top: 3px solid #403f40;
+}
+
+.timeline h4 {
+   color: #424242;
+}
+
+.timeline p {
+   color: #939598;
+   font-family: "Lato";
+}
+
+.timeline h5 {
+   color: #404041;
+   font-family: "Lato";
+}
+
+.cont b {
+   color: #403f40;
+}
+
+.left {
+   font-family: 'Lato';
+}
+
+.timeline {
+  position: relative;
+  margin-left: 7px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0; /* позиція лінії */
+  width: 2px;
+  height: 100%;
+  background: #000; /* колір вертикальної лінії */
+}
+
+.inside_timeline {
+  position: relative;
+  padding-left: 20px;
+//   margin-bottom: 100px; /* відстань між блоками */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0px; /* вирівнювання по вертикалі */
+  left: -7px; /* щоб кружечок був по центру лінії */
+  width: 16px;
+  height: 16px;
+  background: #fff; /* внутрішній фон кружечка */
+  border: 2px solid #000; /* колір обводки */
+  border-radius: 50%;
+  z-index: 1;
+}
