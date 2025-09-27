@@ -4,294 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.min.css" />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
     <title>Resume</title>
   </head>
   <body>
     <div class="container">
-      <div class="left_part">
-        <div class="img_ava">
-          <div class="ava_res"></div>
-        </div>
-        <div class="contact">
-          <h2 class="left_part__title">Contact</h2>
-          <hr />
-          <div class="contact_wrapp">
-            <div class="contact_block">
-              <div class="logo_cont">
-                <img class="contact_logo" src="../img/logo_phone.svg" alt="" />
-              </div>
-              <div class="personal_cont">
-                <span class="soc_cont">Phone:</span> <br />
-                <a href="tel:+001234567889" class="contact_span"
+      <div class="row min-vh-100">
+        <div class="col-4 left_part d-flex flex-column p-3 p-md-4 p-lg-5">
+          <div class="mb-5 text-center flex-fill">
+            <img
+              src="img/photo_res copy.png"
+              alt=""
+              class="img-fluid rounded-circle w-sm-75 w-md-100"
+              style="max-width: 300px"
+            />
+          </div>
+          <div class="mb-4 p-3 flex-fill">
+            <h2 class="fs-2 text-uppercase">Contact</h2>
+            <hr class="mb-md-4" />
+            <div class="d-flex align-items-center mb-2 gap-3">
+              <i class="bi bi-telephone me-3 fs-3"></i>
+              <div>
+                <p class="mb-0 fs-6 fw-bold">Phone:</p>
+                <a href="" class="text-decoration-none text-white fs-6"
                   >00 1234 567 889</a
                 >
               </div>
             </div>
-            <div class="contact_block">
-              <div class="logo_cont">
-                <img class="contact_logo" src="../img/logo_mail.svg" alt="" />
-              </div>
-              <div class="personal_cont">
-                <span class="soc_cont">Mail:</span><br />
-                <a href="mailto:Lnderson@gmail.com" class="contact_span"
+            <div class="d-flex align-items-center mb-2 gap-3">
+              <i class="bi bi-envelope me-3 fs-3"></i>
+              <div>
+                <p class="mb-0 fs-6 fw-bold">Mail:</p>
+                <a href="" class="text-decoration-none text-white fs-6"
                   >Lnderson@gmail.com</a
                 >
               </div>
             </div>
-            <div class="contact_block">
-              <div class="logo_cont">
-                <img class="contact_logo" src="../img/logo_web.svg" alt="" />
-              </div>
-              <div class="personal_cont">
-                <span class="soc_cont">Web:</span><br />
-                <a
-                  href="https://www.Lnderson.com"
-                  class="contact_span"
-                  target="_blank"
+            <div class="d-flex align-items-center mb-2 gap-3">
+              <i class="bi bi-globe me-3 fs-3"></i>
+              <div>
+                <p class="mb-0 fs-6 contact_titles">Web:</p>
+                <a href="" class="text-decoration-none text-white fs-6"
                   >www.Lnderson.com</a
                 >
               </div>
             </div>
           </div>
-        </div>
-        <div class="skills">
-          <h2 class="left_part__title">Skills</h2>
-          <hr />
-          <div class="block_skills">
-            <div class="skill_title">// Professional</div>
-            <div class="skills_subtitles skills_subtitles__first">
-              <div class="subtitle__item">Creativity</div>
-              <div class="subtitle__item">Teamwork</div>
-              <div class="subtitle__item">Communucation</div>
-              <div class="subtitle__item">Hardwork</div>
-            </div>
+          <div class="mb-4 p-3">
+            <h2 class="fs-2 text-uppercase">Skills</h2>
+            <hr class="mb-md-4" />
+            <p class="fs-5 fw-bold">// Professional</p>
+            <ul>
+              <li class="fw-6 lh-lg">Creativity</li>
+              <li class="fw-6 lh-lg">Teamwork</li>
+              <li class="fw-6 lh-lg">Communication</li>
+              <li class="fw-6 lh-lg">Hardwork</li>
+            </ul>
+            <p class="fs-5 fw-bold">// Technical</p>
+            <ul>
+              <li class="fw-6 lh-lg">Wordpress</li>
+              <li class="fw-6 lh-lg">HTML</li>
+              <li class="fw-6 lh-lg">Jquery</li>
+              <li class="fw-6 lh-lg">Photoshop</li>
+              <li class="fw-6 lh-lg">Joomla</li>
+            </ul>
           </div>
-          <div class="block_skills">
-            <div class="skill_title">// Technical</div>
-            <div class="skills_subtitles">
-              <div class="subtitle__item">Wordpress</div>
-              <div class="subtitle__item">HTML</div>
-              <div class="subtitle__item">Jquery</div>
-              <div class="subtitle__item">Photoshop</div>
-              <div class="subtitle__item">Joomla</div>
-            </div>
-          </div>
-        </div>
-        <div class="social">
-          <h2 class="left_part__title">Social</h2>
-          <hr />
-          <div class="block_socials">
-            <div class="block_social">
-              <div class="name_social">Facebook</div>
-              <div class="link_social">
-                <a href="#" class="soc">Facebook.com/username</a>
-              </div>
-            </div>
-            <div class="block_social">
-              <div class="name_social">Linkedin</div>
-              <div class="link_social">
-                <a href="#" class="soc">Linkedin.com/username</a>
-              </div>
-            </div>
-            <div class="block_social">
-              <div class="name_social">Behance</div>
-              <div class="link_social">
-                <a href="#" class="soc">Behance.com/username</a>
-              </div>
-            </div>
-            <div class="block_social">
-              <div class="name_social">Twitter</div>
-              <div class="link_social">
-                <a href="#" class="soc">twitter.com/username</a>
-              </div>
-            </div>
+          <div class="mb-4 p-3">
+            <h2 class="fs-2 text-uppercase">Social</h2>
+            <hr class="mb-md-4" />
+            <ul class="list-unstyled">
+              <li class="mb-sm-3">
+                <p class="mb-0 fs-6 fw-bold">Facebook</p>
+                <a href="" class="text-decoration-none text-white fs-6"
+                  >Facebook.com/username</a
+                >
+              </li>
+              <li class="mb-sm-3">
+                <p class="mb-0 fs-6 fw-bold">Linkedin</p>
+                <a href="" class="text-decoration-none text-white fs-6"
+                  >Linkedin.com/username</a
+                >
+              </li>
+              <li class="mb-sm-3">
+                <p class="mb-0 fs-6 fw-bold">Behance</p>
+                <a href="" class="text-decoration-none text-white fs-6"
+                  >Behance.com/username</a
+                >
+              </li>
+              <li class="mb-sm-3">
+                <p class="mb-0 fs-6 fw-bold">Behance</p>
+                <a href="" class="text-decoration-none text-white fs-6"
+                  >Behance.com/username</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="right_part">
-        <div class="name_bar">
-          <h1 class="res_name">Laura <b>Anderson</b></h1>
-          <p class="position">Web Design & Developer</p>
-        </div>
-        <div class="greeting_part">
-          <h3 class="title_greeting">Hello, I’m Laura</h3>
-          <p class="description_greeting">
-            My Name Is Laura Anderson lorem empus id fringilla molestie ornare
-            diam in olestie ipsum etium rosn ollicitudin est, porttitor amet
-            hitmassa Done cporttitor dolor shit dolor kiren lorem nisl molestie
-            pretium etfring. is the shitp lorem ipcum retiumci amet is
-            tudinest.moles tium lorem olestie pretium apaza all the rosen.
-            fringilla lorem ipsum .
-          </p>
-        </div>
-        <div class="experiance_part">
-          <h2 class="right_part__title">Experience</h2>
-          <hr class="hr_left__part" />
-          <div class="timeline_cont">
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="job_block">
-                  <div class="name_job">
-                    SENIOR <br />
-                    WEB DEVELOPER
-                  </div>
-                  <div class="date_job">Jan 2013 - Dec 2015</div>
-                </div>
-                <div class="company_block">
-                  <div class="company_name">Company Name | Location</div>
-                  <div class="company_desk">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam .
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="job_block">
-                  <div class="name_job">
-                    MASTER <br />
-                    WEB DEVELOPER
-                  </div>
-                  <div class="date_job">Mar 2010 - Feb 2012</div>
-                </div>
-                <div class="company_block">
-                  <div class="company_name">Company Name | Location</div>
-                  <div class="company_desk">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam .
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="job_block">
-                  <div class="name_job">
-                    Jquery <br />
-                    expertise
-                  </div>
-                  <div class="date_job">Apr 2008 - May 2010</div>
-                </div>
-                <div class="company_block">
-                  <div class="company_name">Company Name | Location</div>
-                  <div class="company_desk">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam .
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="education_part">
-          <h2 class="right_part__title">EDUCATION</h2>
-          <hr class="hr_left__part" />
-          <div class="timeline_cont">
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="degree_block">
-                  <div class="degree_name">
-                    master <br />
-                    design web
-                  </div>
-                  <div class="degree_date">Jan 2007 - Dic 2009</div>
-                </div>
-                <div class="unic_block">
-                  <div class="unic_name">University Of Lorem | Location</div>
-                  <div class="unik_desc">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="degree_block">
-                  <div class="degree_name">
-                    BACHELORS <br />
-                    OF ARTS
-                  </div>
-                  <div class="degree_date">Mar 2004 - Feb 2007</div>
-                </div>
-                <div class="unic_block">
-                  <div class="unic_name">University Of Lorem | Location</div>
-                  <div class="unik_desc">
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam .
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="references_part">
-          <h2 class="right_part__title">REFERENCES</h2>
-          <hr class="hr_left__part" />
-          <div class="timeline_cont">
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="name_ref">
-                  <div class="name_person">ADAM smith</div>
-                  <div class="posit">Web Designer</div>
-                </div>
-                <div class="block_ref">
-                  <div class="name_block__ref">Soft Creative Jone</div>
-                  <div class="block_desc__ref">
-                    Porttitor amet massa Done cporttitor dolor et nisl molestie
-                  </div>
-                  <div class="block_contact__ref">
-                    <b>Phone:</b> <a href="tel:+5551235566">+555 123 5566</a>,
-                    <b>Email:</b>
-                    <a href="mailto:infoname33@gmail.com"
-                      >infoname33@gmail.com</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline_block">
-              <div class="timeline_block__marg">
-                <div class="name_ref">
-                  <div class="name_person">JENSON SMITH</div>
-                  <div class="posit">Web developer</div>
-                </div>
-                <div class="block_ref">
-                  <div class="name_block__ref">Dev Tech LTD</div>
-                  <div class="block_desc__ref">
-                    Massa Done cporttitor dolor et nisl molestie lorem lorem
-                  </div>
-                  <div class="block_contact__ref">
-                    <b>Phone:</b> <a href="tel:+5551235566">+555 123 5566</a>,
-                    <b>Email:</b>
-                    <a href="mailto:infoname33@gmail.com"
-                      >infoname33@gmail.com</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="col-8 right_part">@@include('main.html')</div>
       </div>
     </div>
 
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
 </html>

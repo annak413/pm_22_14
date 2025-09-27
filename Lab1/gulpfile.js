@@ -5,13 +5,9 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
-const { src, dest } = require('gulp');
 const fileInclude = require('gulp-file-include');
-
-
-// const htmlTask = () => 
-//     src('./src/pages/**/*.html')
-//         .pipe(dest('./dist'));
+const cleanCSS = require("gulp-clean-css");
+const replace = require('gulp-replace');
 
 const htmlTask = () => 
     src('./src/pages/*.html')  
@@ -37,8 +33,39 @@ const jsTask = () =>
 
 const imgTask = () => 
     src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
-        .pipe(imagemin())
+        // .pipe(imagemin())
         .pipe(dest('./dist/img'));
+
+
+
+// ------------------ Bootstrap таски ------------------
+
+const paths = {
+    bootstrapCSS: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+    bootstrapJS: './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+    distBootstrapCSS: './dist/css',
+    distBootstrapJS: './dist/js',
+};
+
+// Копіюємо CSS Bootstrap
+const bootstrapCSS = () => {
+    return src(paths.bootstrapCSS)
+        .pipe(dest(paths.distBootstrapCSS));
+}
+
+// Копіюємо JS Bootstrap
+const bootstrapJS = () => {
+    return src(paths.bootstrapJS)
+        .pipe(dest(paths.distBootstrapJS));
+}
+
+// Об’єднана таска для всього Bootstrap
+const bootstrapTask = parallel(
+    bootstrapCSS,
+    bootstrapJS,
+);
+
+exports.bootstrapTask = bootstrapTask;
 
 const serve = () => {
     browserSync.init({
@@ -53,8 +80,14 @@ const serve = () => {
     watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}', series(imgTask, done => { browserSync.reload(); done(); }));
 }
 
+
+
 exports.htmlTask = htmlTask;
 exports.scssTask = scssTask;
 exports.jsTask = jsTask;
 exports.imgTask = imgTask;
-exports.default = series(parallel(htmlTask, scssTask, jsTask, imgTask), serve);
+exports.bootstrapTask = bootstrapTask;
+exports.default = series(
+    parallel(htmlTask, scssTask, jsTask, imgTask, bootstrapTask), 
+    serve
+);
