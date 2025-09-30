@@ -7,8 +7,12 @@ const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 const htmlTask = () => 
-    src('./src/pages/**/*.html')
-        .pipe(dest('./dist/pages'));
+    src('./src/pages/*.html')  
+        .pipe(fileInclude({
+            prefix: '@@',      
+            basepath: '@file'  
+        }))
+        .pipe(dest('./dist'));
 
 const scssTask = () => 
     src('./src/scss/**/*.scss')
