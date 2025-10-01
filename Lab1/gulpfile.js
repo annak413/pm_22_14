@@ -10,7 +10,7 @@ const cleanCSS = require("gulp-clean-css");
 const replace = require('gulp-replace');
 
 const htmlTask = () => 
-    src('./src/pages/*.html')  
+    src('./src/*.html')  
         .pipe(fileInclude({
             prefix: '@@',      
             basepath: '@file'  
@@ -74,7 +74,12 @@ const serve = () => {
         }
     });
 
-    watch('./src/pages/**/*.html', series(htmlTask, done => { browserSync.reload(); done(); }));
+
+     watch(['./src/*.html', './src/pages/**/*.html'], series(htmlTask, done => {
+        browserSync.reload();
+        done();
+    }));
+    // watch('./src/pages/**/*.html', series(htmlTask, done => { browserSync.reload(); done(); }));
     watch('./src/scss/**/*.scss', series(scssTask, done => { browserSync.reload(); done(); }));
     watch('./src/js/**/*.js', series(jsTask, done => { browserSync.reload(); done(); }));
     watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}', series(imgTask, done => { browserSync.reload(); done(); }));
