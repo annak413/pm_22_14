@@ -32,7 +32,7 @@ const jsTask = () =>
         .pipe(dest('./dist/js'));
 
 const imgTask = () => 
-    src('./src/img/**/*.{jpg,jpeg,png,gif,svg}')
+    src('./src/img/**/*')
         // .pipe(imagemin())
         .pipe(dest('./dist/img'));
 
