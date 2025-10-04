@@ -1,0 +1,75 @@
+%heading-h2 {
+  color: $primary-color;
+}
+
+.title h1 {
+  letter-spacing: 8px;
+  margin-top: 50px;
+  color: $primary-color;
+}
+
+.title p {
+  letter-spacing: 1px;
+  color: $title-color;
+}
+
+.greating h3 {
+  color: $primary-color;
+  letter-spacing: 1px;
+}
+
+.greating p {
+  color: $paragraf-color;
+}
+
+.expirience h2 {
+  @extend %heading-h2;
+}
+
+.education h2 {
+  @extend %heading-h2;
+}
+
+.references h2 {
+  @extend %heading-h2;
+}
+
+.timeline h4 {
+  color: $timeline-color;
+}
+
+.timeline p {
+  color: $timeline-paragraf;
+  font-family: $main-font;
+}
+
+.timeline h5 {
+  color: $sec-timeline;
+  font-family: $main-font;
+}
+
+.cont b {
+  color: $primary-color;
+}
+
+.left {
+  font-family: $main-font;
+}
+
+.timeline {
+  position: relative;
+  margin-left: $base-margin + 2px; //математичні операції-----------------------------------------------------
+
+  &::before {
+    @include vertical-line($dark-theme);
+  }
+}
+
+.inside_timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-item::before {
+  @include circle-marker(16px, $light-theme, $dark-theme);
+}

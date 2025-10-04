@@ -1,0 +1,24 @@
+// Міксін для вертикальної лінії
+@mixin vertical-line($color) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: $color;
+}
+
+// Міксін для кола на таймлайні
+@mixin circle-marker($size, $bg, $border) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: $size;
+  height: $size;
+  background: $bg;
+  border: 2px solid $border;
+  border-radius: 50%;
+  z-index: 1;
+}

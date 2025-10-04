@@ -1,91 +1,103 @@
-const { src, dest, watch, series, parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const cssnano = require('gulp-cssnano');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
-const browserSync = require('browser-sync').create();
-const fileInclude = require('gulp-file-include');
+const { src, dest, watch, series, parallel } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const cssnano = require("gulp-cssnano");
+const rename = require("gulp-rename");
+const uglify = require("gulp-uglify");
+const imagemin = require("gulp-imagemin");
+const browserSync = require("browser-sync").create();
+const fileInclude = require("gulp-file-include");
 const cleanCSS = require("gulp-clean-css");
-const replace = require('gulp-replace');
+const replace = require("gulp-replace");
 
-const htmlTask = () => 
-    src('./src/*.html')  
-        .pipe(fileInclude({
-            prefix: '@@',      
-            basepath: '@file'  
-        }))
-        .pipe(dest('./dist'));
+const htmlTask = () =>
+  src("./src/*.html")
+    .pipe(
+      fileInclude({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
+    .pipe(dest("./dist"));
 
+const scssTask = () =>
+  src("./src/scss/main.scss")
+    .pipe(sass())
+    .pipe(cssnano())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(dest("./dist/css"));
 
-const scssTask = () => 
-    src('./src/scss/**/*.scss')
-        .pipe(sass())
-        .pipe(cssnano())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('./dist/css'));
+const jsTask = () =>
+  src("./src/js/**/*.js")
+    .pipe(uglify())
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(dest("./dist/js"));
 
-const jsTask = () => 
-    src('./src/js/**/*.js')
-        .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(dest('./dist/js'));
-
-const imgTask = () => 
-    src('./src/img/**/*')
-        // .pipe(imagemin())
-        .pipe(dest('./dist/img'));
-
-
+const imgTask = () =>
+  src("./src/img/**/*")
+    // .pipe(imagemin())
+    .pipe(dest("./dist/img"));
 
 // ------------------ Bootstrap таски ------------------
 
 const paths = {
-    bootstrapCSS: './node_modules/bootstrap/dist/css/bootstrap.min.css',
-    bootstrapJS: './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-    distBootstrapCSS: './dist/css',
-    distBootstrapJS: './dist/js',
+  bootstrapCSS: "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+  bootstrapJS: "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+  distBootstrapCSS: "./dist/css",
+  distBootstrapJS: "./dist/js",
 };
 
 // Копіюємо CSS Bootstrap
 const bootstrapCSS = () => {
-    return src(paths.bootstrapCSS)
-        .pipe(dest(paths.distBootstrapCSS));
-}
+  return src(paths.bootstrapCSS).pipe(dest(paths.distBootstrapCSS));
+};
 
 // Копіюємо JS Bootstrap
 const bootstrapJS = () => {
-    return src(paths.bootstrapJS)
-        .pipe(dest(paths.distBootstrapJS));
-}
+  return src(paths.bootstrapJS).pipe(dest(paths.distBootstrapJS));
+};
 
 // Об’єднана таска для всього Bootstrap
-const bootstrapTask = parallel(
-    bootstrapCSS,
-    bootstrapJS,
-);
+const bootstrapTask = parallel(bootstrapCSS, bootstrapJS);
 
 exports.bootstrapTask = bootstrapTask;
 
 const serve = () => {
-    browserSync.init({
-        server: {
-            baseDir: "./dist"
-        }
-    });
+  browserSync.init({
+    server: {
+      baseDir: "./dist",
+    },
+  });
 
-
-     watch(['./src/*.html', './src/pages/**/*.html'], series(htmlTask, done => {
-        browserSync.reload();
-        done();
-    }));
-    // watch('./src/pages/**/*.html', series(htmlTask, done => { browserSync.reload(); done(); }));
-    watch('./src/scss/**/*.scss', series(scssTask, done => { browserSync.reload(); done(); }));
-    watch('./src/js/**/*.js', series(jsTask, done => { browserSync.reload(); done(); }));
-    watch('./src/img/**/*.{jpg,jpeg,png,gif,svg}', series(imgTask, done => { browserSync.reload(); done(); }));
-}
-
-
+  watch(
+    ["./src/*.html", "./src/pages/**/*.html"],
+    series(htmlTask, (done) => {
+      browserSync.reload();
+      done();
+    })
+  );
+  // watch('./src/pages/**/*.html', series(htmlTask, done => { browserSync.reload(); done(); }));
+  watch(
+    "./src/scss/**/*.scss",
+    series(scssTask, (done) => {
+      browserSync.reload();
+      done();
+    })
+  );
+  watch(
+    "./src/js/**/*.js",
+    series(jsTask, (done) => {
+      browserSync.reload();
+      done();
+    })
+  );
+  watch(
+    "./src/img/**/*.{jpg,jpeg,png,gif,svg}",
+    series(imgTask, (done) => {
+      browserSync.reload();
+      done();
+    })
+  );
+};
 
 exports.htmlTask = htmlTask;
 exports.scssTask = scssTask;
@@ -93,6 +105,6 @@ exports.jsTask = jsTask;
 exports.imgTask = imgTask;
 exports.bootstrapTask = bootstrapTask;
 exports.default = series(
-    parallel(htmlTask, scssTask, jsTask, imgTask, bootstrapTask), 
-    serve
+  parallel(htmlTask, scssTask, jsTask, imgTask, bootstrapTask),
+  serve
 );
