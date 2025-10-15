@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лабораторна робота №4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Лабораторна робота №4</h1>
+
+    <!-- 1. Елемент для імені користувача -->
+    <p>Студент: <span id="personName"></span></p>
+
+    <!-- 2. Блоки з контентом і стрілками -->
+    <div class="section">
+      <div class="header">
+        <span>Досвід роботи</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="content hidden">
+        <ul id="experienceList"></ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="header">
+        <span>Навички</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="content hidden">
+        <ul id="skillsList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
