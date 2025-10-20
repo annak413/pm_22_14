@@ -8,7 +8,6 @@ const browserSync = require("browser-sync").create();
 const fileInclude = require("gulp-file-include");
 const cleanCSS = require("gulp-clean-css");
 const replace = require("gulp-replace");
-
 const htmlTask = () =>
   src("./src/*.html")
     .pipe(
