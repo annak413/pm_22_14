@@ -73,3 +73,49 @@
 .timeline-item::before {
   @include circle-marker(16px, $light-theme, $dark-theme);
 }
+
+.expirience h2 {
+  cursor: pointer;
+}
+
+.collapse-content {
+  /* Початковий (згорнутий) стан: контент приховано */
+  max-height: 0;
+  overflow: hidden;
+  /* Плавний перехід для анімації згортання/розгортання */
+  transition: max-height 0.5s ease-out;
+}
+
+.collapse-content.active {
+  /* Встановлюємо достатньо велике значення, щоб вміст було видно.
+     Важливо: виберіть значення, що гарантовано перевищує висоту вашого найдовшого контенту! */
+  max-height: 1500px;
+  transition: max-height 0.5s ease-in;
+}
+
+.arrow-icon {
+  /* Базові стилі для стрілки */
+  font-size: 1.2rem;
+  line-height: 1;
+  display: inline-block;
+  margin-left: 0.5rem;
+  /* Плавний перехід для обертання */
+  transition: transform 0.3s ease;
+}
+
+/* Згорнутий стан: стрілка має виглядати як ВНИЗ (▼) 
+   Якщо базовий символ - ►, обертаємо його на 90 градусів. */
+.toggle-btn .arrow-icon {
+  /* ► обертається на 90deg, що візуально виглядає як ▼ */
+  transform: rotate(90deg);
+}
+.toggle-btn.active .arrow-icon {
+  /* ► залишається праворуч */
+  transform: rotate(0deg);
+}
+
+/* Додатковий стиль для кнопок-перемикачів (для зручності кліку) */
+.toggle-btn {
+  /* Робить курсор схожим на кнопку при наведенні */
+  cursor: pointer;
+}
