@@ -29,6 +29,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const experienceData = [
+    {
+      degree: "SENIOR WEB DEVELOPER",
+      period: "Jan 2013 - Dec 2015",
+      institution: "Company Name  |  Location",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam .",
+    },
+    {
+      degree: "MASTER WEB DEVELOPER",
+      period: "MAR 2010 - FEB 2012",
+      institution: "Company Name  |  Location",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam .",
+    },
+    {
+      degree: "JQUERY EXPERTISE",
+      period: "APR 2008 - MAY 2010",
+      institution: "Company Name  |  Location",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam .",
+    },
+  ];
+
   const educationData = [
     {
       degree: "MASTER",
@@ -48,22 +72,49 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
+  const referencesData = [
+    {
+      degree: "ADAM SMITH",
+      specialization: "Web Designer",
+      period: "",
+      institution: "Soft Creative Jone",
+      description: `
+              Porttitor amet massa Done cporttitor dolor et nisl molestie
+              <p class="cont ">
+                <b class="fw-bold">Phone:</b> +555 123 5566,
+                <b class="fw-bold">Email:</b> <a href="mailto:infoname33@gmail.com">infoname33@gmail.com</a>
+              </p>
+            `,
+    },
+    {
+      degree: "JENSON SMITH",
+      specialization: "Web developer",
+      period: "",
+      institution: "Dev Tech LTD",
+      description: `
+              Massa Done cporttitor dolor et nisl molestie lorem lorem
+              <p class="cont">
+                <b class="fw-bold">Phone:</b> +555 123 5566,
+                <b class="fw-bold">Email:</b> <a href="mailto:infoname33@gmail.com">infoname33@gmail.com</a>
+              </p>
+            `,
+    },
+  ];
+
   function renderTimeline(data, selector) {
     const container = document.querySelector(selector);
 
     if (!container) return;
 
-    // 1. Очищення вмісту контейнера перед вставкою (як ви просили)
     container.innerHTML = "";
 
-    // 2. Генерація розмітки, яка зберігає всі CSS-класи
     const htmlMarkup = data
       .map(
         (item) => `
                         <div class="inside_timeline">
                           <div class="timeline-item row g-0">
                             <div class="col-4">
-                              <h4 class="fs-6 fw-semibold text-uppercase lh-base mb-1">
+                              <h4 class="fs-6 fw-bold text-uppercase lh-base mb-1">
                                 ${item.degree} <br />
                                 ${item.specialization}
                               </h4>
@@ -73,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               <h5 class="fs-5 lh-base fw-semibold mb-0">
                                 ${item.institution}
                               </h5>
-                              <p class="fs-6">
+                              <p class="fs-6 mb-2">
                                 ${item.description}
                               </p>
                             </div>
@@ -87,4 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderTimeline(educationData, "#educationContent .timeline");
+  renderTimeline(experienceData, "#experienceContent .timeline");
+  renderTimeline(referencesData, "#referencesContent .timeline");
 });
