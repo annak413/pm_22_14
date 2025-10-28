@@ -36,6 +36,9 @@ const imgTask = () =>
     // .pipe(imagemin())
     .pipe(dest("./dist/img"));
 
+const copyData = () => src("src/data.json").pipe(dest("./dist"));
+
+exports.copyData = copyData;
 // ------------------ Bootstrap таски ------------------
 
 const paths = {
@@ -96,6 +99,13 @@ const serve = () => {
       done();
     })
   );
+  watch(
+    "./src/data.json",
+    series(copyData, (done) => {
+      browserSync.reload();
+      done();
+    })
+  );
 };
 
 exports.htmlTask = htmlTask;
@@ -104,6 +114,6 @@ exports.jsTask = jsTask;
 exports.imgTask = imgTask;
 exports.bootstrapTask = bootstrapTask;
 exports.default = series(
-  parallel(htmlTask, scssTask, jsTask, imgTask, bootstrapTask),
+  parallel(htmlTask, scssTask, jsTask, imgTask, bootstrapTask, copyData),
   serve
 );

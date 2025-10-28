@@ -1,0 +1,81 @@
+{
+  "person": {
+    "firstName": "Laura",
+    "lastName": "Anderson",
+    "title": "Web Design & Developer",
+    "greeting": "Hello, I’m Laura"
+  },
+  "contact": {
+    "phone": "00 000 0000",
+    "email": "Lnderson@gmail.com",
+    "web": "www.Lnderson.com"
+  },
+  "skills": {
+    "professional": ["Creativity", "Teamwork", "Communication", "Hardwork"],
+    "technical": ["Wordpress", "HTML", "Jquery", "Photoshop", "Joomla"]
+  },
+  "social": {
+    "facebook": "Facebook.com/username",
+    "linkedin": "Linkedin.com/username",
+    "behance": "Behance.com/username",
+    "twitter": "Twitter.com/username"
+  },
+
+  "experience": [
+    {
+      "degree": "SENIOR",
+      "specialization": "WEB DEVELOPER",
+      "period": "Jan 2013 - Dec 2015",
+      "institution": "Company Name  |  Location",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    },
+    {
+      "degree": "MASTER",
+      "specialization": "WEB DEVELOPER",
+      "period": "MAR 2010 - FEB 2012",
+      "institution": "Company Name  |  Location",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    },
+    {
+      "degree": "JQUERY",
+      "specialization": "EXPERTISE",
+      "period": "APR 2008 - MAY 2010",
+      "institution": "Company Name  |  Location",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    }
+  ],
+  "education": [
+    {
+      "degree": "MASTER",
+      "specialization": "DESIGN WEB",
+      "period": "Jan 2007 - Dic 2009",
+      "institution": "University Of Lorem | Location",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    },
+    {
+      "degree": "BACHELORS",
+      "specialization": "OF ARTS",
+      "period": "Mar 2004 - Feb 2007",
+      "institution": "University Of Lorem | Location",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."
+    }
+  ],
+  "references": [
+    {
+      "degree": "ADAM SMITH",
+      "specialization": "Web Designer",
+      "institution": "Soft Creative Jone",
+      "description": "Porttitor amet massa Done cporttitor dolor et nisl molestie",
+      "phone": "+555 123 5566,",
+      "email": "infoname33@gmail.com"
+    },
+    {
+      "degree": "JENSON SMITH",
+      "specialization": "Web developer",
+      "institution": "Dev Tech LTD",
+      "description": "Massa Done cporttitor dolor et nisl molestie lorem lorem",
+      "phone": "+555 123 5566,",
+      "email": "infoname33@gmail.com"
+    }
+  ]
+}
