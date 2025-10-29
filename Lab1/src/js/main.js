@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Підстановка Title та Greeting (було в about.html)
-    const personTitleElement = document.querySelector(".title + p.fs-5"); // Елемент під ім'ям
+    const personTitleElement = document.querySelector(".title .title_job"); // Елемент під ім'ям
     if (personTitleElement) {
       personTitleElement.textContent = data.person.title;
     }
