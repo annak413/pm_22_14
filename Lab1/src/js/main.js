@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const greetingHeader = document.querySelector(".greating h3");
     if (greetingHeader) {
-      greetingHeader.textContent = data.person.greeting;
+      greetingHeader.textContent = `Hello, I'm ${data.person.firstName}`;
     }
 
     // Рендеринг Контактів (було в sidebar.html)
