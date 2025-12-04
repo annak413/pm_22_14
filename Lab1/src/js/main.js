@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => {
         console.error("Помилка завантаження даних:", error);
-        // Відображення службового повідомлення про помилку
         alert(
           "Помилка завантаження даних! Перевірте консоль та запуск через локальний сервер."
         );
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function createTimelineItem(item) {
-    // Властивість specialization є лише в education та references
     const specializationMarkup = item.specialization
       ? `${item.specialization} <br />`
       : "";
